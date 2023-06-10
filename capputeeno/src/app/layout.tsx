@@ -1,10 +1,12 @@
 import Header from '@/components/Header'
 import './globals.css'
-import {  Saira } from 'next/font/google'
+import { Saira } from 'next/font/google'
+import React from 'react'
 
 const saira = Saira({
-  weight: ['300',  '400', '500', '600'],
-  subsets: ['latin'] })
+  weight: ['300', '400', '500', '600'],
+  subsets: ['latin'],
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -19,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={saira.className}>
-        <Header/>
+        <Header />
         {children}
       </body>
     </html>
