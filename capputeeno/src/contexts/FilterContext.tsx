@@ -1,6 +1,6 @@
 'use client'
 import { PriorityTypes } from '@/types/ProprityTypes'
-import { FilterType } from '@/types/filterTypes'
+import { FilterType } from '@/types/FilterTypes'
 
 import { ReactNode, createContext, useState } from 'react'
 
