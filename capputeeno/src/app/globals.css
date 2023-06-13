@@ -5,7 +5,12 @@
   --text-dark: #737380;
   --delete-color: #de3838;
   --orange-low: #FFA585;
+  --text-dark-2: #41414D;
+  --shapes-dark: #09090A;
+  --shapes: #dce2e6;
+  --bg-primary: #f0f0f5;
 }
+
 * {
   box-sizing: border-box;
   padding: 0;
