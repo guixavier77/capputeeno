@@ -12,7 +12,6 @@ const ListContainer = styled.div`
 `
 const ProductsList = () => {
   const { data } = useProducts()
-  console.log(data)
 
   return (
     <ListContainer>

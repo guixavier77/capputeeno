@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import ArrowIcon from './ArrowIcon'
 import { useState } from 'react'
 import useFilter from '@/hooks/useFilter'
-import { PriorityTypes } from '@/types/ProprityTypes'
+import { PriorityTypes } from '@/types/PriorityTypes'
 
 const FilterContainer = styled.div`
   display: flex;
@@ -35,6 +35,7 @@ const PriorityFilter = styled.ul`
   border-radius: 4px;
   padding: 12px 16px;
   top: 100%;
+  z-index: 999;
 
   li {
     color: var(--text-dark);
