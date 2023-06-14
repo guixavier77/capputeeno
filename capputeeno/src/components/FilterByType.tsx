@@ -1,5 +1,5 @@
 import useFilter from '@/hooks/useFilter'
-import { FilterType } from '@/types/filterTypes'
+import { FilterType } from '@/types/FilterType'
 import styled from 'styled-components'
 
 interface FilterItemProps {
