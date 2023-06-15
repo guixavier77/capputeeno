@@ -1,3 +1,4 @@
+'use client'
 import { styled } from 'styled-components'
 import { Saira_Stencil_One as SairaStencilOne } from 'next/font/google'
 import { PrimaryInputWSearchIcon } from './PrimaryInput'
@@ -30,6 +31,7 @@ const Logo = styled.a`
 `
 
 const header = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const { search, setSearch } = useFilter()
   return (
     <TagHeader>

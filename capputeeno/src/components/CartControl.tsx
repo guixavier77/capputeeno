@@ -1,5 +1,5 @@
 import { useLocalStorage } from '@/hooks/useLocalStorage'
-import CartIcon from './CartIcon'
+import CartIcon from './icons/CartIcon'
 import styled from 'styled-components'
 
 const CartCount = styled.span`
@@ -18,12 +18,12 @@ const Container = styled.div`
 `
 
 const CartControl = () => {
-  const { value } = useLocalStorage('cart-items')
+  const { value } = useLocalStorage('cart-items', [])
 
   return (
     <Container>
       <CartIcon />
-      {value.length && <CartCount>{value.length}</CartCount>}
+      {value.length > 0 && <CartCount>{value.length}</CartCount>}
     </Container>
   )
 }
