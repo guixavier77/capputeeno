@@ -92,6 +92,26 @@ const ProductInfo = styled.div`
 
 const Product = ({ searchParams }: { searchParams: { id: string } }) => {
   const { data } = useProduct(searchParams.id)
+  const handleAddToCart = () => {
+    const cartItems = localStorage.getItem('cart-items')
+    if (cartItems) {
+      const cartItemsArray = JSON.parse(cartItems)
+      const existingProductIndex = cartItemsArray.findIndex(
+        (item: { id: string }) => item.id === searchParams.id,
+      )
+
+      if (existingProductIndex !== -1) {
+        cartItemsArray[existingProductIndex].quantity += 1
+      } else {
+        cartItemsArray.push({ ...data, quantity: 1, id: searchParams.id })
+      }
+
+      localStorage.setItem('cart-items', JSON.stringify(cartItemsArray))
+    } else {
+      const newCart = [{ ...data, quantity: 1, id: searchParams.id }]
+      localStorage.setItem('cart-items', JSON.stringify(newCart))
+    }
+  }
   return (
     <DefaultPageLayout>
       <Container>
@@ -112,7 +132,7 @@ const Product = ({ searchParams }: { searchParams: { id: string } }) => {
                 <p>{data?.description}</p>
               </div>
             </ProductInfo>
-            <button>
+            <button onClick={handleAddToCart}>
               <ShopBagIcon />
               Adicionar ao carrinho
             </button>
