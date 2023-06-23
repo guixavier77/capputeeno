@@ -29,7 +29,6 @@ const TagHeader = styled.header`
 
 const Logo = styled.a`
   color: var(--logo-color);
-  text-decoration: none;
   font-weight: 400;
   line-height: 150%;
   font-size: 20px;
@@ -46,9 +45,7 @@ const header = () => {
   const { search, setSearch } = useFilter()
   return (
     <TagHeader>
-      <Logo className={sairaStencilOne.className} href="/">
-        Capputeeno
-      </Logo>
+      <Logo className={sairaStencilOne.className}>Capputeeno</Logo>
       <div>
         <PrimaryInputWSearchIcon
           value={search}
